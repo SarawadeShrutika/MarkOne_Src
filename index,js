@@ -1,0 +1,76 @@
+var readline = require('readline-sync');
+var score = 0;
+
+var Questions = [{
+  questions: "Which animal is known as the 'Ship of the Desert?",
+  answer: "camel",
+  options: [
+    "elephant",
+    "camel",
+    "giraffe",
+    "horse"]
+
+}, {
+  questions: "Name the Father of the Indian Constitution?",
+  answer: "B.R.Ambedkar",
+  options: [
+    "B.R.Ambedkar",
+    "Gandhiji",
+    "J.Nehru",
+    "Manmohan Singh"]
+},{
+  questions: "Who penned the book 'Wings of Fire'??",
+  answer: "Abdul Kalam",
+  options: [
+    "B.R.Ambedkar",
+    "Gandhiji",
+    "Abdul Kalam",
+    "Lal Bahadur Shastri"]
+},{
+  questions: "Name the deepest ocean in the world?'??",
+  answer: "Pacific",
+  options: [
+    "Pacific",
+    "Atlantic",
+    "Indian",
+    "Arctic"]
+}];
+
+
+function welcome() {
+  console.log("****Hello!!! welcome to quick quizzz APP****");
+  var username = readline.question("Please Can you enter your name? ");
+  console.log(username.toUpperCase() + " WELCOME!!!!");
+}
+
+function play() {
+  for (var i = 0; i < Questions.length; i++) {
+    var quest = Questions[i];
+    game(quest.questions, quest.answer, quest.options);
+  }
+
+}
+
+function game(questions, answer, options) {
+  console.log(questions);
+  for (var i = 0; i < options.length; i++) {
+    var option = options[i];
+    console.log(option);
+  }
+  var user_answer = readline.question("Please enter the answer from the above options");
+  if (user_answer == answer) {
+    score = score + 1;
+  }
+}
+function finalscore(score) {
+  if (score == 2) {
+    console.log("BRAVO!!!! You WON");
+  } else {
+    console.log("Better luck next time!!!");
+  }
+}
+welcome();
+play();
+finalscore(score);
+
+
