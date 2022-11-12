@@ -48,7 +48,6 @@ function play() {
     var quest = Questions[i];
     game(quest.questions, quest.answer, quest.options);
   }
-
 }
 
 function game(questions, answer, options) {
@@ -62,6 +61,7 @@ function game(questions, answer, options) {
     score = score + 1;
   }
 }
+
 function finalscore(score) {
   if (score == 2) {
     console.log("BRAVO!!!! You WON");
@@ -69,6 +69,7 @@ function finalscore(score) {
     console.log("Better luck next time!!!");
   }
 }
+
 welcome();
 play();
 finalscore(score);
